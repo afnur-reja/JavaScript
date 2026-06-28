@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        /* .box {
+           height: 100px;
+           width: 100px;
+           border: 2px solid black;
+           background-color: blueviolet;
+           text-align: center;
+           margin: 50px;
+           border-radius: 10px;
+        } */
+         /* .para{
+            border: 2px solid white;
+            padding: 50px;
+            font-size: 50px;
+            text-align: center;
+         }
+         .new-para-style{
+            background-color: rgb(89, 0, 255);
+            font-family: 'Courier New', Courier, monospace;
+         } */
+
+        
+         body{
+            display: flex;
+            justify-content: center;
+            margin-top: 15rem;
+         }
+
+         .color-box{
+            border: 2px solid black;
+            height: 100px;
+            width: 100px;
+            display: grid ;
+            grid-template-columns: 1fr 1fr;
+            padding: 2px;
+            column-gap: 2px;
+            row-gap: 2px;
+            border-radius: 5px;
+
+         }
+
+         .color {
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+         }
+
+         .color1 {
+              background-color: brown;
+         }
+         .color2 {
+              background-color: green;
+         }
+         .color3 {
+              background-color: goldenrod;
+         }
+         .color4 {
+              background-color: blueviolet;
+         }
+
+    </style>
+</head>
+<body >
+    <div class="color-box">
+       <div class="color color1"></div>
+       <div class="color color2"></div>
+       <div class="color color3"></div>
+       <div class="color color4"></div>
+    </div>
+    
+    <!-- <h2 class="heading2">Hello JavaScript</h2> -->
+
+     <!-- <div class="box">Box1</div>
+     <div class="box">Box2</div>
+     <div class="box">Box3</div> -->
+    
+     <!-- <p class="para">hello</p> -->
+
+    <script src="dom.js"></script>
+</body>
+</html>
