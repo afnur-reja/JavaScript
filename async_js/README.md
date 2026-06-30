@@ -103,3 +103,45 @@ When finished → callback/promise runs
 | Long tasks freeze execution | Other code continues running |
 
 ---
+
+
+
+
+
+# ◆ Callback Hell
+
+## ◆ What is Callback Hell?
+
+➜ **Callback Hell** is a situation where **multiple callbacks are nested inside one another**, making the code difficult to read, understand, and maintain.
+
+It is also called the **Pyramid of Doom** because the code keeps shifting to the right.
+
+---
+
+## ◆ Example
+
+```js
+loginUser(user, () => {
+    getProfile(() => {
+        getPosts(() => {
+            getComments(() => {
+                console.log("Done");
+            });
+        });
+    });
+});
+```
+
+---
+
+## ◆ Why is it a Problem?
+
+✔ Code becomes hard to read.
+
+✔ Difficult to debug.
+
+✔ Hard to maintain.
+
+✔ Error handling becomes complicated.
+
+---
