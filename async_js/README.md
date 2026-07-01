@@ -30,11 +30,13 @@ End
 
 ➜ Allows **time-consuming tasks** to run without blocking other code. Handles by browser.
 
-Examples:
+Examples of Common Asynchronous APIs :
 - `setTimeout()`
+- `setInterval()`
 - `fetch()`
-- Reading files (Node.js)
-- Database queries
+- File System (`fs`) in Node.js
+- Database operations
+- HTTP requests
 
 ```js
 console.log("Start");
@@ -79,17 +81,6 @@ Read file (5 sec) ───────►
 Continue executing other code
 When finished → callback/promise runs
 ```
-
----
-
-## ◆ Common Asynchronous APIs
-
-- `setTimeout()`
-- `setInterval()`
-- `fetch()`
-- File System (`fs`) in Node.js
-- Database operations
-- HTTP requests
 
 ---
 
@@ -143,5 +134,102 @@ loginUser(user, () => {
 ✔ Hard to maintain.
 
 ✔ Error handling becomes complicated.
+
+---
+
+
+
+
+# ◆ Promises in JavaScript — Notes
+
+## ◆ What is a Promise?
+
+➜ A **Promise** is a JavaScript object that represents the **eventual result** (success or failure) of an asynchronous operation.
+
+It helps avoid **callback hell** and makes asynchronous code easier to read.
+
+---
+
+## ◆ Promise States
+
+A Promise has **3 states**:
+
+1. **Pending** ➜ Initial state (operation is still running)
+2. **Fulfilled** ➜ Operation completed successfully
+3. **Rejected** ➜ Operation failed
+
+```
+Pending
+   │
+   ├──► Fulfilled
+   │
+   └──► Rejected
+```
+
+---
+
+## ◆ Creating a Promise
+
+```js
+const promise = new Promise((resolve, reject) => {
+    const success = true;
+
+    if (success) {
+        resolve("Task completed");
+    } else {
+        reject("Task failed");
+    }
+});
+```
+
+- `resolve()` → Marks the promise as **fulfilled**.
+- `reject()` → Marks the promise as **rejected**.
+
+---
+
+## ◆ Consuming a Promise
+
+```js
+promise
+    .then((result) => {
+        console.log(result);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+```
+
+- `.then()` → Runs when the promise is fulfilled.
+- `.catch()` → Runs when the promise is rejected.
+- `.finally()` → Runs whether fulfilled or rejected
+
+> Note: .then(), .catch(), and .finally() always return a new Promise. Its resolved value is based on the callback's return value, enabling Promise chaining.
+
+---
+
+## ◆ Promise Chaining
+
+➜ Multiple asynchronous tasks can be performed in sequence.
+
+```js
+doTask1()
+    .then(doTask2)
+    .then(doTask3)
+    .catch(console.error);
+```
+
+---
+
+## ◆ Why Use Promises?
+
+✔ Avoid callback hell
+
+✔ Better readability
+
+✔ Easier error handling
+
+✔ Supports chaining
+
+✔ Works well with `async/await`
 
 ---
