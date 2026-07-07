@@ -140,7 +140,7 @@ loginUser(user, () => {
 
 
 
-# ◆ Promises in JavaScript — Notes
+# ◆ Promises in JavaScript
 
 ## ◆ What is a Promise?
 
@@ -220,16 +220,52 @@ doTask1()
 
 ---
 
-## ◆ Why Use Promises?
+# ◆ Fetch API 
 
-✔ Avoid callback hell
+## ◆ What is Fetch?
 
-✔ Better readability
+➜ `fetch()` is used to **make HTTP requests** and returns a **Promise**.
 
-✔ Easier error handling
+---
 
-✔ Supports chaining
+## ◆ Syntax
 
-✔ Works well with `async/await`
+```js
+fetch(url, options)
+```
+
+- `url` → API endpoint.
+- `options` *(optional)* → Request configuration (method, headers, body, etc.).
+
+---
+
+## ◆ Basic Example
+
+```js
+fetch("https://api.example.com/users")
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.error(error));
+```
+
+---
+
+## ◆ Common HTTP Methods
+
+- `GET` → Retrieve data.
+- `POST` → Create data.
+- `PUT` → Update entire data.
+- `PATCH` → Update part of data.
+- `DELETE` → Delete data.
+
+---
+
+## ◆ Common Response Methods
+
+- `response.json()` → Parse JSON response.
+- `response.text()` → Parse text response.
+- `response.blob()` → Parse binary data (images/files).
+
+> **ⓘ Note:** `fetch()` resolves successfully even for HTTP errors (e.g., **404**, **500**). Check `response.ok` or `response.status` to handle such errors.
 
 ---
