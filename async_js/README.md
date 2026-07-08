@@ -269,3 +269,70 @@ fetch("https://api.example.com/users")
 > **ⓘ Note:** `fetch()` resolves successfully even for HTTP errors (e.g., **404**, **500**). Check `response.ok` or `response.status` to handle such errors.
 
 ---
+
+
+# ◆ Async/Await
+
+## ◆ What is Async/Await?
+
+➜ `async/await` is a cleaner way to write asynchronous code using Promises.
+
+---
+
+## ◆ `async`
+
+➜ The `async` keyword makes a function return a **Promise**.
+
+```js
+async function greet() {
+    return "Hello";
+}
+```
+
+> **ⓘ Note:** An `async` function always returns a Promise.
+
+---
+
+## ◆ `await`
+
+➜ The `await` keyword pauses execution until a Promise settles. It gives the Promise result.
+
+```js
+const data = await fetch(url);
+```
+
+> **ⓘ Note:** `await` can only be used inside an `async` function.
+
+---
+
+
+## ◆ `try...catch`
+
+➜ Used to handle errors in asynchronous code when using `await`.
+
+```js
+try {
+    // code
+} catch (error) {
+    // handle error
+}
+```
+
+---
+
+## ◆ Example
+
+```js
+async function getUsers() {
+    try {
+        const response = await fetch("https://api.example.com/users");
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+```
+
+---
+
