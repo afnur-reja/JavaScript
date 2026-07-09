@@ -7,7 +7,7 @@ function getData(dataId){
 }
 
 
-//promise chain
+//promise chaining
 getData(1).then((res) => {
     console.log(res);
     return getData(2);
